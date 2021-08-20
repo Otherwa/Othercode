@@ -11,6 +11,7 @@ def ohelp():
    
 def oencode(x):
     inp=x
+    print('Encoded :',end=' ')
     for char in inp:
         print(list_1[char],end=" ")
     
@@ -18,6 +19,7 @@ def oencode(x):
 def odecode(x):
     inh=x
     k=list(inh.split(' '))
+    print('Decoded :',end=' ')
     for char2 in k:
         print(list_2[char2],end='')
     
