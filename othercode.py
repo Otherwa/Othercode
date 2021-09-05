@@ -10,6 +10,7 @@ def ohelp():
     print('\n=================================================')
 def oencode():
     x=str(input("Enter Text : "))
+    x=x.lower()
     for lettr in x:
         if lettr not in list_1:
             return print('try again.\n text required e.g  a,b,c')
