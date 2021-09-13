@@ -15,22 +15,28 @@ def oencode():
         if lettr not in list_1:
             return print('try again.\n text required e.g  a,b,c')
     inp = x
-    print('Encoded :', end=' ')
+    print('Encoded : '+x, end=' ')
+    j=''
     for char in inp:
-        print(list_1[char], end=" ")
+        j+=list_1[char]+" "
+        
+    v=open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'w+')
+    v.write(j)
+    v.close()
+
 def odecode():
-    inh =str(input("Enter pattern: ")) 
+    v=open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'r+') #files directory acess needed
+    inh =v.read()
+    v.close()
     k = list(inh.split(' '))
     for lettr in k:
         if lettr not in list_2:
             return print('try again.\n pattern required e.g _-|,_|')
-
     print('Decoded :', end=' ')
     for char2 in k:
         print(list_2[char2], end='')
-
-
-list_1={' ':'#','a':'_|','b':'|_|','c':'|_','d':'-_]','e':'[]','f':'[-_','g':'-|','h':'|-|','i':'|-','j':'_*|','k':'|_*|','l':'|_*','m':'-_*|','n':'[*]','o':'|-_*','p':'-*|','q':'|-*|','r':'|-*','s':'>','t':'v','u':'<','v':'^','w':'*>','x':'*v','y':'<*','z':'*^','1':'10','2':'9','3':'8','4':'7','5':'6','6':'5','7':'4','8':'3','9':'2','10':'1'}
+  # a space bug discorverd  but works  
+list_1={'':'',' ':'#','a':'_|','b':'|_|','c':'|_','d':'-_]','e':'[]','f':'[-_','g':'-|','h':'|-|','i':'|-','j':'_*|','k':'|_*|','l':'|_*','m':'-_*|','n':'[*]','o':'|-_*','p':'-*|','q':'|-*|','r':'|-*','s':'>','t':'v','u':'<','v':'^','w':'*>','x':'*v','y':'<*','z':'*^','1':'10','2':'9','3':'8','4':'7','5':'6','6':'5','7':'4','8':'3','9':'2','10':'1'}
 list_2={v:k for k,v in list_1.items()}
 print('Other Code: [all lower]')
 print('=======================')
