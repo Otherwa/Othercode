@@ -59,6 +59,4 @@ print('=======================')
 print("Type ohelp() for help & oencode(),odecode() for encoding\n")
 
 
-' text
-
-[Link](url) and ![Image](src)
+'text
