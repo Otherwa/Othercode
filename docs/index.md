@@ -34,8 +34,7 @@ def oencode():
     print('Encoded : '+x, end=' ')
     j=''
     for char in inp:
-        j+=list_1[char]+" "
-        
+        j+=list_1[char]+" "   
     v=open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'w+')
     v.write(j)
     v.close()
@@ -51,12 +50,11 @@ def odecode():
     print('Decoded :', end=' ')
     for char2 in k:
         print(list_2[char2], end='')
-  # a space bug discorverd  but works  
+  
+# a space bug discorverd  but works  
 list_1={'':'',' ':'#','a':'_|','b':'|_|','c':'|_','d':'-_]','e':'[]','f':'[-_','g':'-|','h':'|-|','i':'|-','j':'_*|','k':'|_*|','l':'|_*','m':'-_*|','n':'[*]','o':'|-_*','p':'-*|','q':'|-*|','r':'|-*','s':'>','t':'v','u':'<','v':'^','w':'*>','x':'*v','y':'<*','z':'*^','1':'10','2':'9','3':'8','4':'7','5':'6','6':'5','7':'4','8':'3','9':'2','10':'1'}
 list_2={v:k for k,v in list_1.items()}
 print('Other Code: [all lower]')
 print('=======================')
 print("Type ohelp() for help & oencode(),odecode() for encoding\n")
 
-
-'text
