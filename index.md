@@ -62,5 +62,5 @@ print("Type ohelp() for help & oencode(),odecode() for encoding\n")
 
 ` text
 
-[Link]() and ![Image]('https://research.reading.ac.uk/act/wp-content/uploads/sites/2/icons/python-150x150.png')
+[Link]() and ![Image](https://research.reading.ac.uk/act/wp-content/uploads/sites/2/icons/python-150x150.png)
 
