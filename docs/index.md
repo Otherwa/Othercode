@@ -1,11 +1,7 @@
 ## Welcome to GitHub Pages
-
-
-Syntax highlighted code block
-
 # simple dictionary
-## simple I/O route
-### 26 aplha and digits supported
+## simple I/O write
+### 26 alpha and digits supported
 
 - Bulleted
 - List
