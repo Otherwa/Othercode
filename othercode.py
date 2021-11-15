@@ -1,3 +1,4 @@
+import zlib,base64
 def ohelp():
     print(" #simple encoding pattern for vowel and consonants")
     print(f" #char and dig representation:\n")
@@ -9,7 +10,7 @@ def ohelp():
             print('\n')
     print('\n=================================================')
 def oencode():
-    x=str(input("Enter Text : "))
+    x=str(input("encode Text : "))
     x=x.lower()
     for lettr in x:
         if lettr not in list_1:
@@ -19,16 +20,25 @@ def oencode():
     j=''
     for char in inp:
         j+=list_1[char]+" "
-        
+    #new ideoa
+    #print(j)
+    comp =  base64.b64encode(zlib.compress(j.encode('utf-8'),9))
+    comp=comp.decode('utf-8')
+    #print(comp)
     v=open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'w+')
-    v.write(j)
+    v.write(comp)
     v.close()
 
 def odecode():
-    v=open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'r+') #files directory acess needed
-    inh =v.read()
+    v = open("C:\\Users\\athar\\OneDrive\\Desktop\\encode.txt",'r+') #files directory acess needed
+    inh = v.read()
+    #print(inh)
+    decoded_t = zlib.decompress(base64.b64decode(inh))
     v.close()
-    k = list(inh.split(' '))
+    #print(decoded_t)
+    decoded_t=decoded_t.decode('utf-8')
+    #print(decoded_t)
+    k = list(decoded_t.split(' '))
     for lettr in k:
         if lettr not in list_2:
             return print('try again.\n pattern required e.g _-|,_|')
@@ -36,7 +46,13 @@ def odecode():
     for char2 in k:
         print(list_2[char2], end='')
   # a space bug discorverd  but works  
-list_1={'':'',' ':'#','a':'_|','b':'|_|','c':'|_','d':'-_]','e':'[]','f':'[-_','g':'-|','h':'|-|','i':'|-','j':'_*|','k':'|_*|','l':'|_*','m':'-_*|','n':'[*]','o':'|-_*','p':'-*|','q':'|-*|','r':'|-*','s':'>','t':'v','u':'<','v':'^','w':'*>','x':'*v','y':'<*','z':'*^','1':'10','2':'9','3':'8','4':'7','5':'6','6':'5','7':'4','8':'3','9':'2','10':'1'}
+list_1={'':'',' ':'#','a':'_|','b':'|_|','c':'|_','d':'-_]', \
+        'e':'[]','f':'[-_','g':'-|','h':'|-|','i':'|-','j':'_*|', \
+        'k':'|_*|','l':'|_*','m':'-_*|','n':'[*]','o':'|-_*','p':'-*|', \
+        'q':'|-*|','r':'|-*','s':'>','t':'v','u':'<','v':'^','w':'*>', \
+        'x':'*v','y':'<*','z':'*^', \
+        '1':'10','2':'9','3':'8','4':'7','5':'6',\
+        '6':'5','7':'4','8':'3','9':'2','10':'1'}
 list_2={v:k for k,v in list_1.items()}
 print('Other Code: [all lower]')
 print('=======================')
